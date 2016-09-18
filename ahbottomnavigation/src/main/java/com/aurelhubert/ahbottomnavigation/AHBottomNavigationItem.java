@@ -17,7 +17,7 @@ import android.support.v4.content.ContextCompat;
  */
 public class AHBottomNavigationItem {
 
-	private String title = "";
+	private CharSequence title = "";
 	private Drawable drawable;
 	private int color = Color.GRAY;
 
@@ -37,7 +37,7 @@ public class AHBottomNavigationItem {
 	 * @param title    Title
 	 * @param resource Drawable resource
 	 */
-	public AHBottomNavigationItem(String title, @DrawableRes int resource) {
+	public AHBottomNavigationItem(CharSequence title, @DrawableRes int resource) {
 		this.title = title;
 		this.drawableRes = resource;
 	}
@@ -48,7 +48,7 @@ public class AHBottomNavigationItem {
 	 * @param color    Background color
 	 */
 	@Deprecated
-	public AHBottomNavigationItem(String title, @DrawableRes int resource, @ColorRes int color) {
+	public AHBottomNavigationItem(CharSequence title, @DrawableRes int resource, @ColorRes int color) {
 		this.title = title;
 		this.drawableRes = resource;
 		this.color = color;
@@ -73,7 +73,7 @@ public class AHBottomNavigationItem {
 	 * @param title    String
 	 * @param drawable Drawable
 	 */
-	public AHBottomNavigationItem(String title, Drawable drawable) {
+	public AHBottomNavigationItem(CharSequence title, Drawable drawable) {
 		this.title = title;
 		this.drawable = drawable;
 	}
@@ -85,20 +85,20 @@ public class AHBottomNavigationItem {
 	 * @param drawable Drawable
 	 * @param color    Color
 	 */
-	public AHBottomNavigationItem(String title, Drawable drawable, @ColorInt int color) {
+	public AHBottomNavigationItem(CharSequence title, Drawable drawable, @ColorInt int color) {
 		this.title = title;
 		this.drawable = drawable;
 		this.color = color;
 	}
 
-	public String getTitle(Context context) {
+	public CharSequence getTitle(Context context) {
 		if (titleRes != 0) {
 			return context.getString(titleRes);
 		}
 		return title;
 	}
 
-	public void setTitle(String title) {
+	public void setTitle(CharSequence title) {
 		this.title = title;
 		this.titleRes = 0;
 	}
